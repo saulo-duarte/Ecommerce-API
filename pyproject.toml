@@ -3,22 +3,28 @@ name = "ecommerce-de"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
+    "black>=25.1.0",
     "fastapi>=0.115.12",
+    "isort>=6.0.1",
     "mypy>=1.15.0",
-    "pydantic>=2.11.3",
+    "pre-commit>=4.2.0",
+    "pydantic-settings>=2.9.1",
+    "pydantic[dotenv,email]>=2.11.3",
     "pytest>=8.3.5",
+    "python-json-logger>=3.3.0",
+    "rich>=14.0.0",
     "ruff>=0.11.6",
+    "sqlalchemy>=2.0.40",
 ]
 
 [tool.mypy]
-python_version = "3.13"
+python_version = "3.12"
 strict = true
 show_error_codes = true
 disallow_untyped_defs = true
 ignore_missing_imports = true
-plugins = ["pydantic.mypy"]
 
 [tool.ruff]
 line-length = 88
@@ -35,9 +41,24 @@ select = [
 ]
 ignore = [
     "D203",
-    "D213"
+    "D213",
+    "D100",
+    "D101",
+    "D103",
+    "D104",
+    "D106",
 ]
-target-version = "py313"
+target-version = "py312"
 
 [tool.ruff.isort]
 known-first-party = ["ecommerce_de"]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+skip-string-normalization = false
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["ecommerce_de"]
