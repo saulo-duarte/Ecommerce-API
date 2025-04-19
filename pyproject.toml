@@ -7,6 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "fastapi>=0.115.12",
     "mypy>=1.15.0",
+    "pydantic>=2.11.3",
     "pytest>=8.3.5",
     "ruff>=0.11.6",
 ]
@@ -16,12 +17,13 @@ python_version = "3.13"
 strict = true
 show_error_codes = true
 disallow_untyped_defs = true
-ignore_missing_imports = true 
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
 
 [tool.ruff]
-line-length = 88  # Alinha com Black e PEP 8
+line-length = 88
 select = [
-    "E"
+    "E",
     "F",
     "W",
     "I",
@@ -29,10 +31,13 @@ select = [
     "D",
     "B",
     "Q",
-    "TCH" 
+    "TCH"
 ]
 ignore = [
     "D203",
     "D213"
 ]
 target-version = "py313"
+
+[tool.ruff.isort]
+known-first-party = ["ecommerce_de"]
