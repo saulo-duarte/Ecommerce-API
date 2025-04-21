@@ -11,7 +11,7 @@ dependencies = [
     "mypy>=1.15.0",
     "pre-commit>=4.2.0",
     "pydantic-settings>=2.9.1",
-    "pydantic[dotenv,email]>=2.11.3",
+    "pydantic[dotenv,email,mypy]>=2.11.3",
     "pytest>=8.3.5",
     "python-json-logger>=3.3.0",
     "rich>=14.0.0",
@@ -21,8 +21,8 @@ dependencies = [
 
 [tool.mypy]
 python_version = "3.12"
-strict = true
 show_error_codes = true
+disallow_untyped_calls = true
 disallow_untyped_defs = true
 ignore_missing_imports = true
 

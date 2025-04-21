@@ -123,7 +123,7 @@ requires-dist = [
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "mypy", specifier = ">=1.15.0" },
     { name = "pre-commit", specifier = ">=4.2.0" },
-    { name = "pydantic", extras = ["dotenv", "email"], specifier = ">=2.11.3" },
+    { name = "pydantic", extras = ["dotenv", "email", "mypy"], specifier = ">=2.11.3" },
     { name = "pydantic-settings", specifier = ">=2.9.1" },
     { name = "pytest", specifier = ">=8.3.5" },
     { name = "python-json-logger", specifier = ">=3.3.0" },

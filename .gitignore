@@ -175,3 +175,19 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Arquivos de estado do Terraform
+*.tfstate
+*.tfstate.backup
+
+# Diretórios de plugins do Terraform
+.terraform/
+
+# Arquivos de variáveis sensíveis
+*.tfvars
+
+# Arquivos de planos do Terraform
+*.plan
+
+# Arquivos de lock do Terraform (em alguns casos)
+.terraform.lock.hcl
