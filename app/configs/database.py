@@ -1,7 +1,7 @@
 from functools import lru_cache
 from typing import Any, AsyncGenerator, Optional, Self
 
-from logger import logger
+from app.configs.logger import logger
 from pydantic import PostgresDsn
 from pydantic_settings import BaseSettings
 from sqlalchemy.ext.asyncio import (

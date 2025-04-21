@@ -1,8 +1,9 @@
 import os
 import sys
 from importlib.util import find_spec
+from typing import Any
 
-from loguru import Record, logger
+from loguru import logger
 
 
 def _use_rich() -> bool:
@@ -13,7 +14,7 @@ def _use_json() -> bool:
     return find_spec("pythonjsonlogger") is not None
 
 
-def _json_formatter(record: Record) -> str:
+def _json_formatter(record: dict[str, Any]) -> str:
     import json
 
     return json.dumps(
@@ -37,7 +38,6 @@ def setup_logger() -> None:
 
     elif log_format == "rich" and _use_rich():
         import logging
-
         from rich.logging import RichHandler
 
         class InterceptHandler(logging.Handler):
@@ -53,8 +53,8 @@ def setup_logger() -> None:
             sys.stdout,
             level=log_level,
             format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | "
-            "<level>{level}</level> | "
-            "<cyan>{name}</cyan>: <level>{message}</level>",
+                   "<level>{level}</level> | "
+                   "<cyan>{name}</cyan>: <level>{message}</level>",
         )
 
 
