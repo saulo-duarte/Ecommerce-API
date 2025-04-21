@@ -1,8 +1,8 @@
 from datetime import datetime, timezone
 from uuid import uuid4
 
-from configs.database import Base
-from enums.payment import PaymentMethod, PaymentStatus
+from app.configs.database import Base
+from app.models.enums.payment import PaymentMethod, PaymentStatus
 from sqlalchemy import DateTime, Enum, ForeignKey, Numeric, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 

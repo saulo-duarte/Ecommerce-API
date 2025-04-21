@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING
 from uuid import uuid4
 
-from configs.database import Base
+from app.configs.database import Base
 from sqlalchemy import ForeignKey, Integer, Numeric, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 

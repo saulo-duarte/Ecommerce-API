@@ -1,8 +1,8 @@
 from datetime import datetime, timezone
 from uuid import uuid4
 
-from configs.database import Base
-from enums.customer import CustomerStatus
+from app.configs.database import Base
+from app.models.enums.customer import CustomerStatus
 from sqlalchemy import DateTime, Enum, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 

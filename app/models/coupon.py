@@ -2,8 +2,8 @@ from datetime import datetime, timezone
 from typing import TYPE_CHECKING, List, Optional
 from uuid import uuid4
 
-from configs.database import Base
-from enums.coupon import DiscountType
+from app.configs.database import Base
+from app.models.enums.coupon import DiscountType
 from sqlalchemy import Boolean, DateTime, Enum, ForeignKey, Integer, Numeric, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 

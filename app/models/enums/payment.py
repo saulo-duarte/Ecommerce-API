@@ -6,3 +6,11 @@ class PaymentStatus(enum.Enum):
     COMPLETED = "completed"
     FAILED = "failed"
     REFUNDED = "refunded"
+
+class PaymentMethod(enum.Enum):
+    CREDIT_CARD = "credit_card"
+    DEBIT_CARD = "debit_card"
+    PAYPAL = "paypal"
+    BANK_TRANSFER = "bank_transfer"
+    CASH = "cash"
+    CRYPTOCURRENCY = "cryptocurrency"
